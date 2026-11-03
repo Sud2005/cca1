@@ -1,0 +1,23 @@
+\begin{table}[t]
+\caption{1D-CNN + BiLSTM Architecture (Approach 3)}
+\label{tab:cnn}
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Layer} & \textbf{Config.} & \textbf{Output shape} \\
+\midrule
+Input & raw normalised beat & $(1, 244)$ \\
+Conv1D + ReLU & 16 filters, $k{=}7$, pad 3 & $(16, 244)$ \\
+MaxPool1D & pool 2 & $(16, 122)$ \\
+Conv1D + ReLU & 32 filters, $k{=}5$, pad 2 & $(32, 122)$ \\
+MaxPool1D & pool 2 & $(32, 61)$ \\
+BiLSTM & hidden 64, bidirectional & $(61, 128)$ \\
+(last time step) & -- & $(128,)$ \\
+Dropout & $p{=}0.3$ & $(128,)$ \\
+Dense + Softmax & $128 \rightarrow 5$ & $(5,)$ \\
+\bottomrule
+\end{tabular}
+\\[4pt]
+\footnotesize Trained with Adam ($lr{=}10^{-3}$), batch size 128, up to 25
+epochs with early stopping (patience 5) on DS1 validation macro-F1.
+\end{table}

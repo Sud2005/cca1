@@ -1,0 +1,21 @@
+\begin{table*}[t]
+\caption{Comparative Performance of the Three Approaches on the DS2 Test Set (49{,}691 beats)}
+\label{tab:performance}
+\centering
+\footnotesize
+\begin{tabular}{lccccccccccccc}
+\toprule
+& & & & \multicolumn{2}{c}{N} & \multicolumn{2}{c}{S} & \multicolumn{2}{c}{V} & \multicolumn{2}{c}{F} & \multicolumn{2}{c}{Q} \\
+\cmidrule(lr){5-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}\cmidrule(lr){11-12}\cmidrule(lr){13-14}
+\textbf{Model} & \textbf{Acc.} & \textbf{Macro-F1} & \textbf{W.-F1} & P & R & P & R & P & R & P & R & P & R \\
+\midrule
+SVM (RR/HRV)         & 0.789 & \textbf{0.362} & 0.839 & 0.967 & 0.814 & 0.111 & 0.046 & 0.682 & 0.851 & 0.053 & \textbf{0.943} & 0.001 & 0.143 \\
+Random Forest (DWT)  & \textbf{0.884} & 0.334 & \textbf{0.882} & 0.942 & \textbf{0.932} & 0.074 & 0.006 & 0.638 & \textbf{0.835} & 0.000 & 0.000 & 0.000 & 0.000 \\
+CNN-BiLSTM            & 0.449 & 0.183 & 0.570 & 0.957 & 0.460 & 0.037 & 0.127 & 0.151 & 0.539 & 0.000 & 0.010 & 0.000 & 0.000 \\
+\bottomrule
+\end{tabular}
+\\[4pt]
+\footnotesize P = precision, R = recall, W.-F1 = weighted-F1. ROC-AUC
+(macro, one-vs-rest): SVM 0.812, RF 0.730, CNN-BiLSTM 0.563. Q has only 7
+test beats (Section III); its metrics are not statistically reliable.
+\end{table*}

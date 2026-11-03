@@ -1,0 +1,21 @@
+\begin{table}[t]
+\caption{RR-Interval / HRV Feature Set (Approach 1)}
+\label{tab:hrv}
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Feature} & \textbf{Definition} \\
+\midrule
+$RR_{prev}$ & interval to the preceding beat (s) \\
+$RR_{next}$ & interval to the following beat (s) \\
+$RR_{mean}$ & $(RR_{prev}+RR_{next})/2$ \\
+$RR_{ratio}$ & $RR_{prev}/RR_{next}$ \\
+$RR_{\Delta}$ & $|RR_{next}-RR_{prev}|$ (local RMSSD proxy) \\
+$HR_{inst}$ & $60/RR_{mean}$ (instantaneous heart rate, bpm) \\
+\bottomrule
+\end{tabular}
+\\[4pt]
+\footnotesize All 6 features are standardised (zero mean, unit variance) before
+the SVM. Missing boundary-beat intervals are imputed from the single
+available neighbour (Section~IV-B).
+\end{table}

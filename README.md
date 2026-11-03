@@ -265,7 +265,9 @@ train/validation loss and validation macro-F1 curves.
 - External validation on a second database (e.g. INCART, PTB-XL) to test
   cross-database generalisation, not just cross-patient.
 - A short IEEE-format paper summarising this methodology and these results
-  (see `paper/README.md` -- not yet written).
+  now exists at [`paper/`](paper/) (`main.tex`, compiles to a 9-page PDF via
+  Overleaf or `tectonic`; see `paper/README.md` for the compile steps and
+  a checklist of what still needs manual input before submission).
 
 ## 15. References and dataset attribution
 
@@ -313,7 +315,7 @@ ecg-arrhythmia-pattern-recognition/
 │   ├── classification_reports/
 │   └── figures/
 ├── models/                      <- trained artifacts (not committed)
-├── paper/                       <- placeholder for a future IEEE paper
+├── paper/                       <- IEEE-format paper (main.tex, compiled_paper.pdf, figures/, tables/)
 └── docs/
     └── methodology.md
 ```

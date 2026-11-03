@@ -1,0 +1,21 @@
+\begin{table}[t]
+\caption{Experimental Configuration}
+\label{tab:setup}
+\centering
+\begin{tabular}{@{}p{0.32\columnwidth}p{0.6\columnwidth}@{}}
+\toprule
+\textbf{Item} & \textbf{Value} \\
+\midrule
+Language / version & Python 3.12 \\
+Core libraries & wfdb, NumPy, SciPy, scikit-learn, PyWavelets, PyTorch, pandas \\
+Random seed & 42 (fixed across all models) \\
+Train/test split & DS1 (22 rec.) / DS2 (22 rec.), patient-independent \\
+Hyperparameter search & \texttt{GroupKFold} ($k{=}5$) within DS1 only \\
+SVM training set & class-balanced DS1 subsample ($\leq$4,000/class) \\
+RF, CNN-BiLSTM training set & full DS1 (51,001 beats) \\
+CNN-BiLSTM val.\ split & 15\% of DS1 by record (\texttt{GroupShuffleSplit}) \\
+Class imbalance handling & \texttt{class\_weight="balanced"} (SVM, RF); capped inverse-frequency weights, max $10\times$ (CNN) \\
+Evaluation protocol & single evaluation on DS2, after hyperparameter selection \\
+\bottomrule
+\end{tabular}
+\end{table}

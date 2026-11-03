@@ -1,0 +1,21 @@
+\begin{table}[t]
+\caption{MIT-BIH Dataset Characteristics and AAMI Class Distribution}
+\label{tab:dataset}
+\centering
+\begin{tabular}{lrrl}
+\toprule
+\textbf{Class} & \textbf{DS1 (train)} & \textbf{DS2 (test)} & \textbf{Meaning} \\
+\midrule
+N & 45{,}847 & 44{,}239 & Normal / BBB beat \\
+S & 944     & 1{,}837  & Supraventricular ectopic \\
+V & 3{,}788  & 3{,}220  & Ventricular ectopic \\
+F & 414     & 388     & Fusion beat \\
+Q & 8       & 7       & Unknown / paced \\
+\midrule
+\textbf{Total} & \textbf{51{,}001} & \textbf{49{,}691} & 22 records each \\
+\bottomrule
+\end{tabular}
+\\[4pt]
+\footnotesize Sampling frequency: 360~Hz; resolution: 11-bit over $\pm$5~mV;
+lead used: MLII; 44 of 48 records used (102, 104, 107, 217 excluded, Section~III).
+\end{table}
